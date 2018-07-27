@@ -6,11 +6,13 @@ import org.web.helper.StringHelper;
 
 import java.io.Serializable;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * @author luyl
- *         用于封装DUBBO接口,封装BIZ层的结果.
+ * 用于封装DUBBO接口,封装BIZ层的结果.
  */
 @Setter
 @Getter
@@ -27,6 +29,7 @@ public class ResultDO<T> implements Serializable {
     private String code;
 
     private boolean success = true; // 执行是否成功
+    // 用于描述返回记录总数，如果返回单条记录，例如返回的module类型是一个对象，而非集合的场合，会自动设置1，详情见setModule方法。
     private long totalCount = 0;
     private T module; // 实际的返回结果
     // 某些情况下，特殊 格外的参数返回
@@ -69,6 +72,15 @@ public class ResultDO<T> implements Serializable {
 
     public boolean isNotEmpty() {
         return !isEmpty();
+    }
+
+    public void setModule(T module) {
+        this.module = module;
+        if ((module instanceof List) || (module instanceof Set) || (module instanceof Map)) {
+            // Do nothing.
+        } else {
+            setTotalCount(1L);
+        }
     }
 
 }
