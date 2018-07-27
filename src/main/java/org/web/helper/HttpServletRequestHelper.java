@@ -37,7 +37,11 @@ public class HttpServletRequestHelper {
 		}
 	}
 
-	public static Map<String, Object> buildMapByRequest(HttpServletRequest request) throws ServiceException {
+	public static Map<String, Object> buildMapByRequest(HttpServletRequest request) throws ServiceException{
+		return buildMapByRequest(request,"全部");
+	}
+
+	public static Map<String, Object> buildMapByRequest(HttpServletRequest request,String setNullStr) throws ServiceException {
 		logger.info("URI is " + request.getRequestURI());
 		try {
 			Enumeration<String> e = request.getParameterNames();
@@ -50,7 +54,7 @@ public class HttpServletRequestHelper {
 					map.put(name.replaceFirst(DATA_FORMAT_, ""), DateHelper.fromStrGetDate(request.getParameter(name),DateHelper.FORMAT_YYYY_MM_DD));
 				} else if (name.startsWith(TIME_FORMAT_)) {
 					map.put(name.replaceFirst(TIME_FORMAT_, ""), DateHelper.fromStrGetDate(request.getParameter(name),DateHelper.FORMAT_YYYY_MM_DD_HH_MM_SS));
-				} else if ("全部".equals(value)){
+				} else if (setNullStr.equals(value)){
 					map.put(name, null);
 				} else if (!StringUtils.isEmpty(value)){
 					map.put(name, request.getParameter(name));

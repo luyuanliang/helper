@@ -7,7 +7,7 @@ public class RegExpValidatorHelper {
 	/**
 	 * 验证邮箱
 	 * 
-	 * @param 待验证的字符串
+	 * @param  str 待验证的字符串
 	 * @return 如果是符合的字符串,返回 <b>true </b>,否则为 <b>false </b>
 	 */
 	public static boolean isEmail(String str) {
@@ -18,7 +18,7 @@ public class RegExpValidatorHelper {
 	/**
 	 * 验证IP地址
 	 * 
-	 * @param 待验证的字符串
+	 * @param  str 待验证的字符串
 	 * @return 如果是符合格式的字符串,返回 <b>true </b>,否则为 <b>false </b>
 	 */
 	public static boolean isIP(String str) {
@@ -30,7 +30,7 @@ public class RegExpValidatorHelper {
 	/**
 	 * 验证网址Url
 	 * 
-	 * @param 待验证的字符串
+	 * @param  str 待验证的字符串
 	 * @return 如果是符合格式的字符串,返回 <b>true </b>,否则为 <b>false </b>
 	 */
 	public static boolean isUrl(String str) {
@@ -41,7 +41,7 @@ public class RegExpValidatorHelper {
 	/**
 	 * 验证电话号码
 	 * 
-	 * @param 待验证的字符串
+	 * @param  str 待验证的字符串
 	 * @return 如果是符合格式的字符串,返回 <b>true </b>,否则为 <b>false </b>
 	 */
 	public static boolean isTelephone(String str) {
@@ -52,7 +52,7 @@ public class RegExpValidatorHelper {
 	/**
 	 * 验证输入密码条件(字符与数据同时出现)
 	 * 
-	 * @param 待验证的字符串
+	 * @param  str 待验证的字符串
 	 * @return 如果是符合格式的字符串,返回 <b>true </b>,否则为 <b>false </b>
 	 */
 	public static boolean isPassword(String str) {
@@ -63,7 +63,7 @@ public class RegExpValidatorHelper {
 	/**
 	 * 验证输入密码长度 (6-18位)
 	 * 
-	 * @param 待验证的字符串
+	 * @param  str 待验证的字符串
 	 * @return 如果是符合格式的字符串,返回 <b>true </b>,否则为 <b>false </b>
 	 */
 	public static boolean isPasswLength(String str) {
@@ -74,7 +74,7 @@ public class RegExpValidatorHelper {
 	/**
 	 * 验证输入邮政编号
 	 * 
-	 * @param 待验证的字符串
+	 * @param  str 待验证的字符串
 	 * @return 如果是符合格式的字符串,返回 <b>true </b>,否则为 <b>false </b>
 	 */
 	public static boolean isPostalcode(String str) {
@@ -85,7 +85,7 @@ public class RegExpValidatorHelper {
 	/**
 	 * 验证输入手机号码
 	 * 
-	 * @param 待验证的字符串
+	 * @param  str 待验证的字符串
 	 * @return 如果是符合格式的字符串,返回 <b>true </b>,否则为 <b>false </b>
 	 */
 	public static boolean isHandset(String str) {
@@ -96,7 +96,7 @@ public class RegExpValidatorHelper {
 	/**
 	 * 验证输入身份证号
 	 * 
-	 * @param 待验证的字符串
+	 * @param  str 待验证的字符串
 	 * @return 如果是符合格式的字符串,返回 <b>true </b>,否则为 <b>false </b>
 	 */
 	public static boolean isIDcard(String str) {
@@ -107,7 +107,7 @@ public class RegExpValidatorHelper {
 	/**
 	 * 验证输入两位小数
 	 * 
-	 * @param 待验证的字符串
+	 * @param  str 待验证的字符串
 	 * @return 如果是符合格式的字符串,返回 <b>true </b>,否则为 <b>false </b>
 	 */
 	public static boolean isDecimal(String str) {
@@ -118,7 +118,7 @@ public class RegExpValidatorHelper {
 	/**
 	 * 验证输入一年的12个月
 	 * 
-	 * @param 待验证的字符串
+	 * @param  str 待验证的字符串
 	 * @return 如果是符合格式的字符串,返回 <b>true </b>,否则为 <b>false </b>
 	 */
 	public static boolean isMonth(String str) {
@@ -129,7 +129,7 @@ public class RegExpValidatorHelper {
 	/**
 	 * 验证输入一个月的31天
 	 * 
-	 * @param 待验证的字符串
+	 * @param  str 待验证的字符串
 	 * @return 如果是符合格式的字符串,返回 <b>true </b>,否则为 <b>false </b>
 	 */
 	public static boolean isDay(String str) {
@@ -140,7 +140,7 @@ public class RegExpValidatorHelper {
 	/**
 	 * 验证日期时间
 	 * 
-	 * @param 待验证的字符串
+	 * @param  str 待验证的字符串
 	 * @return 如果是符合网址格式的字符串,返回 <b>true </b>,否则为 <b>false </b>
 	 */
 	public static boolean isDate(String str) {
@@ -159,7 +159,7 @@ public class RegExpValidatorHelper {
 	/**
 	 * 验证数字输入
 	 * 
-	 * @param 待验证的字符串
+	 * @param  str 待验证的字符串
 	 * @return 如果是符合格式的字符串,返回 <b>true </b>,否则为 <b>false </b>
 	 */
 	public static boolean isNumber(String str) {
@@ -170,7 +170,7 @@ public class RegExpValidatorHelper {
 	/**
 	 * 验证非零的正整数
 	 * 
-	 * @param 待验证的字符串
+	 * @param  str 待验证的字符串
 	 * @return 如果是符合格式的字符串,返回 <b>true </b>,否则为 <b>false </b>
 	 */
 	public static boolean isIntNumber(String str) {
@@ -181,7 +181,7 @@ public class RegExpValidatorHelper {
 	/**
 	 * 验证大写字母
 	 * 
-	 * @param 待验证的字符串
+	 * @param  str 待验证的字符串
 	 * @return 如果是符合格式的字符串,返回 <b>true </b>,否则为 <b>false </b>
 	 */
 	public static boolean isUpChar(String str) {
@@ -192,7 +192,7 @@ public class RegExpValidatorHelper {
 	/**
 	 * 验证小写字母
 	 * 
-	 * @param 待验证的字符串
+	 * @param  str 待验证的字符串
 	 * @return 如果是符合格式的字符串,返回 <b>true </b>,否则为 <b>false </b>
 	 */
 	public static boolean isLowChar(String str) {
@@ -203,7 +203,7 @@ public class RegExpValidatorHelper {
 	/**
 	 * 验证验证输入字母
 	 * 
-	 * @param 待验证的字符串
+	 * @param  str 待验证的字符串
 	 * @return 如果是符合格式的字符串,返回 <b>true </b>,否则为 <b>false </b>
 	 */
 	public static boolean isLetter(String str) {
@@ -214,7 +214,7 @@ public class RegExpValidatorHelper {
 	/**
 	 * 验证验证输入汉字
 	 * 
-	 * @param 待验证的字符串
+	 * @param  str 待验证的字符串
 	 * @return 如果是符合格式的字符串,返回 <b>true </b>,否则为 <b>false </b>
 	 */
 	public static boolean isChinese(String str) {
@@ -225,7 +225,7 @@ public class RegExpValidatorHelper {
 	/**
 	 * 验证验证输入字符串
 	 * 
-	 * @param 待验证的字符串
+	 * @param  str 待验证的字符串
 	 * @return 如果是符合格式的字符串,返回 <b>true </b>,否则为 <b>false </b>
 	 */
 	public static boolean isLength(String str) {
