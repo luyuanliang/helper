@@ -23,8 +23,8 @@ public class PropertiesHelper {
 				return value;
 			}
 		} catch (Exception e) {
-			logger.error("ERROR key is " + key);
-			logger.error(ServiceExceptionHelper.getExceptionInfo(e));
+			logger.warn("warn key is " + key);
+			logger.warn(ServiceExceptionHelper.getExceptionInfo(e));
 		}
 		return value;
 	}
@@ -34,8 +34,8 @@ public class PropertiesHelper {
 		try {
 			value = Boolean.valueOf(getString(bundleName, key));
 		} catch (Exception e) {
-			logger.error("ERROR key is " + key);
-			logger.error(ServiceExceptionHelper.getExceptionInfo(e));
+			logger.warn("warn key is " + key);
+			logger.warn(ServiceExceptionHelper.getExceptionInfo(e));
 		}
 		return value;
 	}
@@ -45,8 +45,8 @@ public class PropertiesHelper {
 		try {
 			value = Long.valueOf(getString(bundleName, key));
 		} catch (Exception e) {
-			logger.error("ERROR key is " + key);
-			logger.error(ServiceExceptionHelper.getExceptionInfo(e));
+			logger.warn("warn key is " + key);
+			logger.warn(ServiceExceptionHelper.getExceptionInfo(e));
 		}
 		return value;
 	}
