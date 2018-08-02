@@ -60,7 +60,15 @@ public class PropertiesHelper {
 	 * @return value
 	 */
 	public static String getString(String bundleName, String key) throws MissingResourceException {
-		final ResourceBundle RESOURCE_BUNDLE = ResourceBundle.getBundle(bundleName, Locale.getDefault());
-		return RESOURCE_BUNDLE.getString(key);
+		return getResourceBundle(bundleName,null).getString(key);
 	}
+
+	public static ResourceBundle getResourceBundle(String bundleName,Locale locale) throws MissingResourceException {
+		if(locale==null){
+			locale = Locale.getDefault();
+		}
+		return ResourceBundle.getBundle(bundleName, locale);
+	}
+
+
 }
