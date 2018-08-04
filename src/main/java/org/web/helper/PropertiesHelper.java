@@ -14,13 +14,13 @@ public class PropertiesHelper {
     public static String getString(ResourceBundle resourceBundle, String key, String defaultValue) {
         try {
             String value = resourceBundle.getString(key);
-            if (StringUtils.isEmpty(value)) {
+            if (StringUtils.isNotBlank(value)) {
                 return value;
             } else {
                 logger.warn(key + "'s value is null ");
             }
         } catch (Exception e) {
-            logger.warn("warn key is " + key + "/n" + ServiceExceptionHelper.getExceptionInfo(e));
+            logger.warn(key +" is not setted." );
         }
         return defaultValue;
     }
@@ -29,13 +29,13 @@ public class PropertiesHelper {
     public static Boolean getBoolean(ResourceBundle resourceBundle, String key, boolean defaultValue) {
         try {
             String value = resourceBundle.getString(key);
-            if (StringUtils.isEmpty(value)) {
+            if (StringUtils.isNotBlank(value)) {
                 return Boolean.valueOf(value);
             } else {
                 logger.warn(key + "'s value is null ");
             }
         } catch (Exception e) {
-            logger.warn("warn key is " + key + "/n" + ServiceExceptionHelper.getExceptionInfo(e));
+            logger.warn(key +" is not setted." );
         }
         return defaultValue;
     }
@@ -43,13 +43,13 @@ public class PropertiesHelper {
     public static Long getLong(ResourceBundle resourceBundle, String key, Long defaultValue) {
         try {
             String value = resourceBundle.getString(key);
-            if (StringUtils.isEmpty(value)) {
+            if (StringUtils.isNotBlank(value)) {
                 return Long.valueOf(value);
             } else {
                 logger.warn(key + "'s value is null ");
             }
         } catch (Exception e) {
-            logger.warn("warn key is " + key + "/n" + ServiceExceptionHelper.getExceptionInfo(e));
+            logger.warn(key +" is not setted." );
         }
         return defaultValue;
     }
@@ -57,13 +57,13 @@ public class PropertiesHelper {
     public static Integer getInt(ResourceBundle resourceBundle, String key, Integer defaultValue) {
         try {
             String value = resourceBundle.getString(key);
-            if (StringUtils.isEmpty(value)) {
+            if (StringUtils.isNotBlank(value)) {
                 return Integer.valueOf(value);
             } else {
                 logger.warn(key + "'s value is null ");
             }
         } catch (Exception e) {
-            logger.warn("warn key is " + key + "/n" + ServiceExceptionHelper.getExceptionInfo(e));
+            logger.warn(key +" is not setted." );
         }
         return defaultValue;
     }
@@ -79,9 +79,10 @@ public class PropertiesHelper {
         return getResourceBundle(bundleName, null).getString(key);
     }
 
+
     public static ResourceBundle getResourceBundle(String bundleName, String baseName) throws MissingResourceException {
         Locale locale = null;
-        if (StringUtils.isEmpty(baseName)) {
+        if (StringUtils.isNotBlank(baseName)) {
             locale = Locale.getDefault();
         } else {
             locale = new Locale(baseName);
