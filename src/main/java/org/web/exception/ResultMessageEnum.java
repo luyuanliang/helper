@@ -15,13 +15,13 @@ public enum ResultMessageEnum {
 	SYSTEM_ERROR("SYSTEM_ERROR", "系统异常"),
 	OUTER_SYSTEM_EXCEPTION("OUTER_SYSTEM_EXCEPTION", "外部系统异常"),
 	ACCESS_OUTER_SYSTEM_ERROR("OUTER_SYSTEM_ERROR", "访问外部系统出错"),
+	DATA_NOT_EXIST("DATA_NOT_EXIST","信息不存在"),
 
-	// 参数相关
-	PARAM_INVALID("PARAM_INVALID", "参数不合法"),
+	// 参数相关	PARAM_INVALID("PARAM_INVALID", "参数不合法"),
 	PARAM_FORMAT_INVALID("PARAM_FORMAT_INVALID", "格式不合法"),
 	PARAM_EMPTY("PARAM_EMPTY", "参数为空");
 
-	
+
 	
 	private String code;
 	private String message;
