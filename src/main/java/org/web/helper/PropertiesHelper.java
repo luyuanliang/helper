@@ -20,7 +20,7 @@ public class PropertiesHelper {
                 logger.warn(key + "'s value is null ");
             }
         } catch (Exception e) {
-            logger.warn(key +" is not setted." );
+            logger.warn(key + " is not setted.");
         }
         return defaultValue;
     }
@@ -35,7 +35,7 @@ public class PropertiesHelper {
                 logger.warn(key + "'s value is null ");
             }
         } catch (Exception e) {
-            logger.warn(key +" is not setted." );
+            logger.warn(key + " is not setted.");
         }
         return defaultValue;
     }
@@ -49,7 +49,7 @@ public class PropertiesHelper {
                 logger.warn(key + "'s value is null ");
             }
         } catch (Exception e) {
-            logger.warn(key +" is not setted." );
+            logger.warn(key + " is not setted.");
         }
         return defaultValue;
     }
@@ -63,7 +63,7 @@ public class PropertiesHelper {
                 logger.warn(key + "'s value is null ");
             }
         } catch (Exception e) {
-            logger.warn(key +" is not setted." );
+            logger.warn(key + " is not setted.");
         }
         return defaultValue;
     }
