@@ -19,7 +19,8 @@ public enum ResultMessageEnum {
 
 	// 参数相关	PARAM_INVALID("PARAM_INVALID", "参数不合法"),
 	PARAM_FORMAT_INVALID("PARAM_FORMAT_INVALID", "格式不合法"),
-	PARAM_EMPTY("PARAM_EMPTY", "参数为空");
+	PARAM_EMPTY("PARAM_EMPTY", "参数为空"),
+	PARAM_INVALID("PARAM_INVALID","参数无效");
 
 
 	
