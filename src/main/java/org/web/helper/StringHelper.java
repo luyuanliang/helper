@@ -16,7 +16,9 @@ public class StringHelper {
 
 	// 大小写均可匹配
 	public static Pattern PATTERN_EVAL = Pattern.compile("eval\\((.*)\\)", Pattern.CASE_INSENSITIVE);
-	// private static Pattern PATTERN_JAVA_SCRIPT = Pattern.compile("([\\\"\\\'][\\s]*)javascript:(.*)([\\\"\\\'])", Pattern.CASE_INSENSITIVE);
+	// private static Pattern PATTERN_JAVA_SCRIPT =
+	// Pattern.compile("([\\\"\\\'][\\s]*)javascript:(.*)([\\\"\\\'])",
+	// Pattern.CASE_INSENSITIVE);
 	public static Pattern PATTERN_SCRIPT = Pattern.compile("script", Pattern.CASE_INSENSITIVE);
 
 	public static Pattern LESS_PATTERN_SCRIPT = Pattern.compile("<\\s*script", Pattern.CASE_INSENSITIVE);
@@ -92,7 +94,7 @@ public class StringHelper {
 		String result = m.replaceAll(replacement);
 		return result;
 	}
-	
+
 	public static boolean isEmpty(Object obj) {
 		if (obj != null) {
 			if (obj instanceof List) {
@@ -113,5 +115,9 @@ public class StringHelper {
 			}
 		}
 		return false;
+	}
+
+	public static String getStringCheckNull(String value, String defaulValue) {
+		return StringUtils.isNotBlank(value) ? value : defaulValue;
 	}
 }
