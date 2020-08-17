@@ -1,5 +1,6 @@
 package org.web.helper;
 
+import java.io.Closeable;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -44,25 +45,22 @@ public class HttpHelper {
 			logger.error(ServiceExceptionHelper.getExceptionInfo(e));
 			throw new ServiceException("GET_REQUEST_FAIL", "Get 请求访问失败。", uri, result);
 		} finally {
-			if (httpClient != null) {
-				try {
-					httpClient.close();
-				} catch (IOException e) {
-					logger.error(ServiceExceptionHelper.getExceptionInfo(e));
-				}
-			}
-			if (httpResponse != null) {
-				try {
-					httpResponse.close();
-				} catch (IOException e) {
-					logger.error(ServiceExceptionHelper.getExceptionInfo(e));
-				}
-			}
+			closeCloseable(httpClient);
+			closeCloseable(httpResponse);
 		}
 		return result;
 	}
 
-	
+	private static void closeCloseable(Closeable closeable) {
+		if (closeable != null) {
+			try {
+				closeable.close();
+			} catch (IOException e) {
+				logger.error(ServiceExceptionHelper.getExceptionInfo(e));
+			}
+		}
+	}
+
 	public static String requestByPost(String uri, Map<String, String> params, String charset) throws ServiceException {
 		logger.info("URI is " + uri);
 		String result = null;
@@ -93,22 +91,9 @@ public class HttpHelper {
 			logger.error(ServiceExceptionHelper.getExceptionInfo(e));
 			throw new ServiceException("POST_REQUEST_FAIL", "Get 请求访问失败。", uri, result);
 		} finally {
-			if (httpClient != null) {
-				try {
-					httpClient.close();
-				} catch (IOException e) {
-					logger.error(ServiceExceptionHelper.getExceptionInfo(e));
-				}
-			}
-			if (httpResponse != null) {
-				try {
-					httpResponse.close();
-				} catch (IOException e) {
-					logger.error(ServiceExceptionHelper.getExceptionInfo(e));
-				}
-			}
+			closeCloseable(httpClient);
+			closeCloseable(httpResponse);
 		}
 	}
-
 
 }
