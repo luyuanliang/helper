@@ -1,6 +1,6 @@
 package org.web.helper;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.web.domain.ResultDO;
 import org.web.domain.ViewResult;
 import org.web.exception.ResultMessageEnum;

@@ -1,11 +1,8 @@
 package org.web.helper;
 
 import org.apache.commons.beanutils.BeanUtils;
-import org.apache.commons.lang.StringUtils;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.web.exception.ResultMessageEnum;
 import org.web.exception.ServiceException;
@@ -49,7 +46,7 @@ public class ExcelHelper {
                         continue;
                     }
                     String value = null;
-                    if (Cell.CELL_TYPE_NUMERIC == cell.getCellType()) {
+                    if (CellType.NUMERIC == cell.getCellType()) {
                         DecimalFormat df = new DecimalFormat("0");
                         value = df.format(cell.getNumericCellValue());
                     } else {
