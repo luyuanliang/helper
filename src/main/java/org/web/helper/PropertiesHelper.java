@@ -82,7 +82,7 @@ public class PropertiesHelper {
 
     public static ResourceBundle getResourceBundle(String bundleName, String baseName) throws MissingResourceException {
         Locale locale = null;
-        if (StringUtils.isNotBlank(baseName)) {
+        if (StringUtils.isEmpty(baseName)) {
             locale = Locale.getDefault();
         } else {
             locale = new Locale(baseName);
