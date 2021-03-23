@@ -38,4 +38,8 @@ public class ListHelper {
         }
         return false;
     }
+    public static boolean isNotEmpty(List list) {
+        return !isEmpty(list);
+    }
+
 }
